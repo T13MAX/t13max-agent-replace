@@ -1,0 +1,22 @@
+entries:
+  - className: "lib.grpcstartersbram.SessionImplWrapper$SessionImplMixed"
+    methodName: "newSessionUserFactoryFromHeaders"
+    replace: ""
+    matcher:
+      name: "LineNumberMatcher"
+      args:
+        - "321"
+  - className: "lib.grpcstartersbram.SessionImplWrapper"
+    methodName: "checkSessionAndWrapperXsHeader"
+    replace: ""
+    matcher:
+      name: "LineNumberMatcher"
+      args:
+        - "53"
+  - className: "lib.grpcstartersbram.SessionImplWrapper"
+    methodName: "checkSessionAndWrapperXsHeader"
+    replace: "{ $_ = $proceed($1, new lib.grpcstartersbram.SessionImplWrapper.SessionImplMixed(trapEnv, implSession, scope, s, enabledXxHeaderToken, true, true) ); }"
+    matcher:
+      name: "LineNumberMatcher"
+      args:
+        - "63"

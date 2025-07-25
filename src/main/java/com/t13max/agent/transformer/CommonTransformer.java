@@ -43,6 +43,7 @@ public class CommonTransformer implements ClassFileTransformer {
                 CtClass cc = cp.get(this.className);
                 if (cc == null) {
                     System.err.println("CommonTransformer.transform error! class is null, className=" + className + " methodName=" + methodName);
+                    return null;
                 }
                 if (cc.isFrozen()) cc.defrost();
                 CtMethod method = cc.getDeclaredMethod(methodName);

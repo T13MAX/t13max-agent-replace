@@ -20,3 +20,11 @@ entries:
       name: "LineNumberMatcher"
       args:
         - "63"
+  - className: "room.feature.texas.logic.TexasRoomContext"
+    methodName: "checkUserOp"
+    replace: "{ $_ = java.time.Duration.ofMillis(1L); }"
+    matcher:
+      name: "ClassMethodMatcher"
+      args:
+        - "java.time.Duration"
+        - 'ofMillis'

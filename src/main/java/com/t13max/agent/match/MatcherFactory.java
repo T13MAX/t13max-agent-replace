@@ -21,6 +21,12 @@ public class MatcherFactory {
                 int lineNumber = Integer.parseInt(args.getFirst());
                 return new LineNumberMatcher(lineNumber);
             }
+            case "ClassMethodMatcher"->{
+                if (args.size()<2) {
+                    throw new IllegalArgumentException("ClassMethodMatcher, args error, args=" + args);
+                }
+                return new ClassMethodMatcher(args);
+            }
             default -> {
                 throw new IllegalArgumentException("MatcherFactory.createMatcher, name=" + name);
             }
